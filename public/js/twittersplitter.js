@@ -103,24 +103,30 @@
             var countCharacter = 0;
             var pageCount = 1;
             var appendSTr = "";
-            splitSTr.forEach(function(i, idx, element) {
-                countCharacter+= i.length + 1;
-                if(countCharacter >= 49){
-                    countCharacter = 0;
-                    var modStr = pageCount  + "/" + sentenceDivide + " " + appendSTr.trim();
-                    strModified.push(modStr);
-                    pageCount+=1;
-                    appendSTr = "";
+            if(splitSTr.length > 1){
+                splitSTr.forEach(function(i, idx, element) {
+                    countCharacter+= i.length + 1;
+                    if(countCharacter >= 49){
+                        countCharacter = 0;
+                        var modStr = pageCount  + "/" + sentenceDivide + " " + appendSTr.trim();
+                        strModified.push(modStr);
+                        pageCount+=1;
+                        appendSTr = "";
+                    }
+
+                    appendSTr += i + " ";
+
+                    if(idx === element.length - 1){
+                       var modStr = (pageCount > 1) ? pageCount  + "/" + sentenceDivide + " " + appendSTr.trim()  : appendSTr.trim();
+                       strModified.push(modStr);  
+                    }
+
+                });
+            }else{
+                if(splitSTr[0].length > 49){
+                    alert("Messagee is too long");
                 }
-                
-                appendSTr += i + " ";
-                
-                if(idx === element.length - 1){
-                   var modStr = (pageCount > 1) ? pageCount  + "/" + sentenceDivide + " " + appendSTr.trim()  : appendSTr.trim();
-                   strModified.push(modStr);  
-                }
-                
-            });
+            }
         }
         return strModified;
     },

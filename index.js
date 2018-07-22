@@ -120,7 +120,7 @@ io.on('connection', function(socket){
     * Socket Get message ab store it in Redis
     */
   socket.on('message', function(msg){
-    console.log('message : ' + msg);
+      //console.log('message : ' + msg);
       socket.to('TwitterRoom').emit('message', msg);
       client.lpush('messages', JSON.stringify(msg));
       client.ltrim('messages', 0, 99);      
@@ -144,7 +144,7 @@ io.on('connection', function(socket){
             if (response == 1) {
                console.log("Deleted Successfully!")
             } else{
-             console.log("Cannot delete")
+                console.log("Cannot delete")
             }
          })
         socket.emit('notice', socket.username + ' has left the chat.');
