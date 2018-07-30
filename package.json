@@ -10,5 +10,29 @@
     "twitter-notes"
   ],
   "author": "Anurup Borah",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-redis": "^3.3.3",
+    "dotenv": "^6.0.0",
+    "consolidate": "^0.15.1",
+    "express": "^4.15.2",
+    "express-session": "^1.15.6",
+    "mustache": "^2.3.0",
+    "ejs": "^2.6.1",
+    "redis": "^2.8.0",
+    "socket.io": "^2.1.1",
+    "socket.io-redis": "^5.2.0",
+    "socket.io.users": "^2.0.2",
+    "socket.io-emitter": "^3.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anurupborah2001/twitter-splitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anurupborah2001/twitter-splitter/issues"
+  },
+  "homepage": "https://github.com/anurupborah2001/twitter-splitter#readme"
 }
